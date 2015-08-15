@@ -1,0 +1,25 @@
+mixin tbl(width)
+	- width = width || '100%';
+	- defaultAttrs = {cellspacing: 0, cellpadding: 0, border: 0};
+	table(width=width)&attributes(defaultAttrs)
+		block
+
+mixin pad(width)
+	td(width=width) &nbsp;
+
+//- Outlook doesn't support background images
+//- to show need workaround (see http://backgrounds.cm/)
+//- FUCK!!!!!!!!!!!!
+mixin background-for-outlook(url)
+	div
+		| <!--[if gte mso 9]>
+		| <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:250;">
+		|   <v:fill type="tile" src="#{url}" color="#FFFFFF" />
+		|   <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+		|	<![endif]-->
+		+tbl: tr: td(align='center')
+			block
+		| <!--[if gte mso 9]>
+		| 	</v:textbox>
+		| </v:rect>
+		| <![endif]-->
