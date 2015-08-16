@@ -7,3 +7,4 @@ npm-debug.log
 .sass-cache
 .env
 .c9
+gulp/local_config.js

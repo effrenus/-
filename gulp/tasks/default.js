@@ -14,6 +14,7 @@ gulp.task('build', ['del'], function() {
 	runSequence(
 		'styles',
 		'jade',
-		'imagemin'
+		'imagemin',
+		'send'
 	);
 });

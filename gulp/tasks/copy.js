@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 
 gulp.task('copy:images', () => {
-	gulp
+	return gulp
 		.src('app/images/**/*')
 		.pipe(gulp.dest('dist/images'));
 })
