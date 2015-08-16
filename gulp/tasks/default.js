@@ -10,11 +10,19 @@ gulp.task('default', () => {
 		);
 });
 
-gulp.task('build', ['del'], function() {
+gulp.task('test', () => {
+	runSequence(
+		'build',
+		'send'
+	);
+});
+
+gulp.task('build', ['del'], cb => {
 	runSequence(
 		'styles',
 		'jade',
 		'imagemin',
-		'send'
+		'inlineCSS',
+		cb
 	);
 });

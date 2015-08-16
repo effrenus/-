@@ -12,7 +12,8 @@ const defaultConfig = {
 		//адрес картинок на уделенном сервере, если не планируется внедрять в письмо
 		remoteURL: 'https://dl.dropboxusercontent.com/'
 	},
-	paths: {
+	path: {
+		dist: './dist',
 		images: './dist/images',
 		styles: './dist/styles'
 	}

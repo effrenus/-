@@ -2,70 +2,71 @@ extends ./layouts/default
 
 block head
 	title Шкаф-купе ПРЕМЬЕРА от Роникон
+	link(rel='stylesheet' href='./styles/mail_inline.css')
 	style
 		include ../../dist/styles/mail.css
 
 block content
+	.preheader.
+		Шкаф-купе ПРЕМЬЕРА от Роникон. Наполнение: две секции шириной 679 и 390 мм, правая с 4 полками, левая с антресольной полкой и штангой.
+		Две двери из монолитного ЛДСП. В стоимость входит также угловой терминал.
+
 	+tbl(700)
 		tr
 			td(valign='top')
 				+tbl
 					tr
 						+pad(13)
-						td(width=303 valign='top' style={'padding-top': '35px'})
-							img(src='./images/preview.jpg' alt='')
+						td.preview__image(width=303 valign='top'): img(src='./images/preview.jpg' width=305 alt='')
 						+pad(5)
-						td(valign='top' style={'padding-top': '45px'})
+						td.preview__side(valign='top')
 							+tbl
 								tr
 									td(valign='top' style={'padding-bottom': '20px'})
 										+tbl
 											tr
-												td(valign='middle' align='center' style={padding: '5px 35px 5px 20px', 'border-right': '1px solid #DFDFDF'})
-													img(src='./images/logo.png' width=94 height=49 alt='Роникон')
-												td(width='100%' valign='middle' style={padding: '0 0 0 35px', 'color': '#898989'}) +7&nbsp;(495)&nbsp;988-4-999
+												td.head__logo(valign='middle' align='center'): img(src='./images/logo.png' width=94 height=49 alt='Роникон')
+												td.head__phone(width='100%' valign='middle') +7&nbsp;(495)&nbsp;988-4-999
 								tr
-									td(style={'padding-bottom': '20px'})
+									td.head__text
 										font(color='#FA8C1E' style={'font-size': '28px'}) ШКАФ-КУПЕ <b>ПРЕМЬЕР</b>А<br/>
 										font(color='#FA8C1E') сезона от <b style="font-size: 14px">РОНИКОН</b>
 								tr
-									td(style={color:'#FA8C1E', 'padding-bottom': '14px', 'font-size': '33px'})
-										b 7 990 руб.
+									td.head__price: b 7 990 руб.
 								tr
-									td
-										a(href='http://ronikon.ru/'): img(src='./images/button.png'  width=139 height=42 border=0 alt='СМОТРЕТЬ')
+									td: a(href='http://ronikon.ru/'): img(src='./images/button.png'  width=139 height=42 border=0 alt='СМОТРЕТЬ')
 								tr: td(height=5) &nbsp;
 								tr
 									td: img(src='./images/button-shadow.png' width=140 alt='')
 
 				+tbl
 					tr(bgcolor='#6B7479')
-						td(valign='top' colspan=2 style={'font-size': '15px', padding: '20px 50px', color: '#FFFFFF'})
+						td.variants(valign='top' colspan=2)
 							+tbl
 								tr
 									td(width=350 valign='top')
 										+tbl
-											tr: td(colspan=2 style={'padding': '0 0 10px 0', color: '#FFFFFF'}) Варианты расцветок:
+											tr: td.variants__title(colspan=2) Варианты расцветок:
 											tr
-												td(valign='top' style={'line-height': '1.45', color: '#FFFFFF'})
+												td.variants__subtitle(valign='top')
 													| Дуб кремона<br/> шапмань<br/>
-													img(src='./images/pattern/1.jpg' width=88 height=88 style={'margin-top': '10px'})
-												td(valign='top' style={'line-height': '1.45', color: '#FFFFFF'})
+													img.variants__pattern(src='./images/pattern/1.jpg' width=88 height=88)
+												td.variants__subtitle(valign='top')
 													| Бук тироль<br/> шоколад<br/>
-													img(src='./images/pattern/2.jpg' width=88 height=88 style={'margin-top': '10px'})
+													img.variants__pattern(src='./images/pattern/2.jpg' width=88 height=88)
 									+pad(10)
 									td(valign='top' style={color: '#FFFFFF'})
 										| Внутреннее наполнение:
 										+tbl
 											tr
-												td(valign='top' style={'padding': '20px 20px 0 0'}): img(src='./images/inside1.png' width=126 height=126 alt='')
-												td(valign='top' style={'padding': '20px 0 0 0'}): img(src='./images/inside2.png' width=126 height=126 alt='')
-							tr(height=40): td &nbsp;
+												td.variants__inside_l(valign='top'): img(src='./images/inside1.png' width=126 height=126 alt='')
+												td.variants__inside_r(valign='top'): img(src='./images/inside2.png' width=126 height=126 alt='')
+					tr(height=40): td &nbsp;
 
 				+tbl
 					tr
 						td(colspan=2 align='center' style={color: '#3C505A'})
-							| <span style="font-size: 15px">ВАРИАНТЫ МОДИФИКАЦИЙ</span>
+							span.mods__headtitle ВАРИАНТЫ МОДИФИКАЦИЙ
 							+tbl
 								tr
 									td(height=20) &nbsp;
@@ -85,20 +86,20 @@ block content
 											tr
 												td(height=5) &nbsp;
 											tr
-												td(style={'font-size': '18px', 'padding-left': '60px', 'padding-top': '25px', 'border-right': '1px solid #C3C3C3'}) <b>ПРЕМЬЕР big</b>
-												td(style={'font-size': '18px', 'padding-left': '30px', 'padding-top': '25px', 'border-right': '1px solid #C3C3C3'}) <b>ПРЕМЬЕР small</b>
-												td(style={'font-size': '18px', 'padding-left': '30px', 'padding-top': '25px'}) <b>ПРЕМЬЕР big</b>
+												td.mods__title <b>ПРЕМЬЕР big</b>
+												td.mods__title.mods__title_2 <b>ПРЕМЬЕР small</b>
+												td.mods__title.mods__title_3 <b>ПРЕМЬЕР big</b>
 											tr
 												td(height=10) &nbsp;
 											tr
 												td(style={'padding-left': '60px'})
-													<a href="http://ronikon.ru" style="text-decoration: none; padding: 3px 7px; margin-right: 5px; font-size: 12px; background-color: #FA8C1E; color: #FFFFFF">смотреть</a>
+													a.mods__see(href='http://ronikon.ru') смотреть
 													| <font color="#7B7B7B"><b>12&nbsp;990</b>&nbsp;руб.</font>
 												td(style={'padding-left': '30px'})
-													<a href="http://ronikon.ru" style="text-decoration: none; padding: 3px 7px; margin-right: 5px; font-size: 12px; background-color: #FA8C1E; color: #FFFFFF">смотреть</a>
+													a.mods__see(href='http://ronikon.ru') смотреть
 													| <font color="#7B7B7B"><b>12&nbsp;990</b>&nbsp;руб.</font>
 												td(style={'padding-left': '30px'})
-													<a href="http://ronikon.ru" style="text-decoration: none; padding: 3px 7px; margin-right: 5px; font-size: 12px; background-color: #FA8C1E; color: #FFFFFF">смотреть</a>
+													a.mods__see(href='http://ronikon.ru') смотреть
 													| <font color="#7B7B7B"><b>12&nbsp;990</b>&nbsp;руб.</font>
 								tr
 									td(height=80) &nbsp;
@@ -106,26 +107,32 @@ block content
 									td
 										+tbl
 											tr
-												td(align='center' background='./images/bcg.png'): img(src='./images/mods/1.png')
-												td(align='center' background='./images/bcg.png'): img(src='./images/mods/2.png')
-												td(align='center' background='./images/bcg.png'): img(src='./images/mods/3.png')
+												td(width='33%' align='center' background='./images/bcg.png')
+													+background-for-outlook('./images/bcg.png')
+														img(src='./images/mods/1.png')
+												td(width='33%' align='center' background='./images/bcg.png')
+													+background-for-outlook('./images/bcg.png')
+														img(src='./images/mods/2.png')
+												td(width='33%' align='center' background='./images/bcg.png')
+													+background-for-outlook('./images/bcg.png')
+														img(src='./images/mods/3.png')
 											tr
 												td(height=5) &nbsp;
 											tr
-												td(style={'font-size': '18px', 'padding-left': '60px', 'padding-top': '25px', 'border-right': '1px solid #C3C3C3'}) <b>ПРЕМЬЕР big</b>
-												td(style={'font-size': '18px', 'padding-left': '30px', 'padding-top': '25px', 'border-right': '1px solid #C3C3C3'}) <b>ПРЕМЬЕР small</b>
-												td(style={'font-size': '18px', 'padding-left': '30px', 'padding-top': '25px'}) <b>ПРЕМЬЕР big</b>
+												td.mods__title <b>ПРЕМЬЕР big</b>
+												td.mods__title.mods__title_2 <b>ПРЕМЬЕР small</b>
+												td.mods__title.mods__title_3 <b>ПРЕМЬЕР big</b>
 											tr
 												td(height=10) &nbsp;
 											tr
 												td(style={'padding-left': '60px'})
-													<a href="http://ronikon.ru" style="text-decoration: none; padding: 3px 7px; margin-right: 5px; font-size: 12px; background-color: #FA8C1E; color: #FFFFFF">смотреть</a>
+													a.mods__see(href='http://ronikon.ru') смотреть
 													| <font color="#7B7B7B"><b>12&nbsp;990</b>&nbsp;руб.</font>
 												td(style={'padding-left': '30px'})
-													<a href="http://ronikon.ru" style="text-decoration: none; padding: 3px 7px; margin-right: 5px; font-size: 12px; background-color: #FA8C1E; color: #FFFFFF">смотреть</a>
+													a.mods__see(href='http://ronikon.ru') смотреть
 													| <font color="#7B7B7B"><b>12&nbsp;990</b>&nbsp;руб.</font>
 												td(style={'padding-left': '30px'})
-													<a href="http://ronikon.ru" style="text-decoration: none; padding: 3px 7px; margin-right: 5px; font-size: 12px; background-color: #FA8C1E; color: #FFFFFF">смотреть</a>
+													a.mods__see(href='http://ronikon.ru') смотреть
 													| <font color="#7B7B7B"><b>12&nbsp;990</b>&nbsp;руб.</font>
 								tr
 									td(height=50) &nbsp;
@@ -137,20 +144,20 @@ block content
 							+tbl
 								tr
 									td <hr width="100%" color="#C3C3C3" size="1" />
-									td(width=240 style={'font-size': '14px', color: '#3C505A'}) <center><nobr>ОСНОВНЫЕ&nbsp;ПРЕИМУЩЕСТВА</nobr></center>
+									td.merits__title(width=240) <center><nobr>ОСНОВНЫЕ&nbsp;ПРЕИМУЩЕСТВА</nobr></center>
 									td <hr width="100%" color="#C3C3C3" size="1" />
 								tr: td(colspan=3 height=50) &nbsp;
 							+tbl
 								tr
 									td: img(src='./images/icons/merit1.png' width=73 height=73 alt='')
 									+pad(15)
-									td(width=135 style={'font-size': '15px', 'line-height': '1.45', color: '#343336'}) алюминиевая нижеопорная система
+									td.merits__text(width=135) алюминиевая нижеопорная система
 									td: img(src='./images/icons/merit2.png' width=73 height=73 alt='')
 									+pad(15)
-									td(width=135 style={'font-size': '15px', 'line-height': '1.45', color: '#343336'}) бесшумный <br/>ход<br/> дверей
+									td.merits__text(width=135) бесшумный <br/>ход<br/> дверей
 									td: img(src='./images/icons/merit3.png' width=73 height=73 alt='')
 									+pad(15)
-									td(width=135 style={'font-size': '15px', 'line-height': '1.45', color: '#343336'}) экологичный ЛДСП<br/> класса 1
+									td.merits__text(width=135) экологичный ЛДСП<br/> класса 1
 						+pad(50)
 
 				+tbl
@@ -162,21 +169,21 @@ block content
 					tr: td(colspan=5 height=15 bgcolor='#F8F8F8')
 					tr
 						td(width=30 bgcolor='#F8F8F8') &nbsp;
-						td(bgcolor='#F8F8F8' valign='top' style={'font-size': '12px', color: '#AAAAAA'})
+						td.footer__text(bgcolor='#F8F8F8' valign='top')
 							+tbl
 								tr: td(style={'font-size': '12px', 'line-height': '1.45', color: '#AAAAAA'}) Вы получаете данное письмо, так как зарегистировались или подписались на новости на сайте <a href="http://www.ronikon.ru" style="color: #AAAAAA">www.ronikon.ru</a><br/> Если вы не хотите получать информацию о новых акциях, то <a href="http://www.ronikon.ru" style="color: #AAAAAA">отпишитесь</a> от рассылки.
 								tr: td(height=30) &nbsp;
 								tr: td(style={'font-size': '12px', color: '#AAAAAA'}) &copy; 2001-2015 Роникон, телефон <nobr style="font-size: 14px">+7 (495) 988-49-99</nobr>
-						td(width=150 bgcolor='#F8F8F8') &nbsp;
-						td(bgcolor='#F8F8F8' valign='top' width=150 style={'font-size': '12px', color: '#AAAAAA'})
+						td(width=145 bgcolor='#F8F8F8') &nbsp;
+						td.footer__text(bgcolor='#F8F8F8' valign='top' width=150)
 							+tbl
-								tr: td(align='right' style={'font-size': '16px', color: '#3C505A', color: '#3C505A'}) <nobr>+7&nbsp;(495)&nbsp;988-4-999</nobr>
+								tr: td.footer__phone(align='right') <nobr>+7&nbsp;(495)&nbsp;988-4-999</nobr>
 								tr: td(height=30) &nbsp;
 								tr
 									td
 										+tbl
 											tr
-												td(align='right' style={color: '#838383', 'font-size': '12px'}) Мы в<br/> социальных<br/> сетях:
+												td.footer__social(align='right') Мы в<br/> социальных<br/> сетях:
 												+pad(10)
 												td(valign='bottom'): a(href='/'): img(src='./images/icons/vk.png' alt='vk' width=30 height=31 border=0)
 												+pad(10)
